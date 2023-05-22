@@ -52,7 +52,7 @@ public class JWTAuthentificationFilter extends UsernamePasswordAuthenticationFil
             roles.add(a.getAuthority());
         });
         String jwt = JWT.create()
-                .withIssuer(request.getRequestURI())
+                .withIssuer("Java-spring-boot")
                 .withSubject(user.getUsername())
                 .withArrayClaim("roles",roles.toArray(new String[roles.size()]))
                 .withClaim("user_id", appUserRepository.findByUsername(user.getUsername()).getId())

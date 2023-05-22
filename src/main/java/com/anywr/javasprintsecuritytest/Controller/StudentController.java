@@ -94,7 +94,7 @@ public class StudentController {
         Student student = mapstructMapper.studentDtoToStudent(studentDto);
         try {
             Student result = studentService.createStudent(student);
-            return ResponseEntity.status(HttpStatus.OK).body(mapstructMapper.studentToStudentDto(result));
+            return ResponseEntity.status(HttpStatus.CREATED).body(mapstructMapper.studentToStudentDto(result));
         } catch (RuntimeException e) {
             log.error("Error during creation Student", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("error during creation Student");

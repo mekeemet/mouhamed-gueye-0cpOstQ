@@ -79,7 +79,7 @@ public class ClasseController {
 
         try {
             Classe result = classeService.createClasse(classe);
-            return ResponseEntity.status(HttpStatus.OK).body(mapstructMapper.classeToClasseDto(result));
+            return ResponseEntity.status(HttpStatus.CREATED).body(mapstructMapper.classeToClasseDto(result));
         } catch (RuntimeException e) {
             log.error("Error during creation classe", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("error during creation classe");

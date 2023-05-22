@@ -74,7 +74,7 @@ public class TeacherController {
         Teacher teacher = mapstructMapper.teacherDtoToTeacher(teacherDto);
         try {
             Teacher result = teacherService.createTeacher(teacher);
-            return ResponseEntity.status(HttpStatus.OK).body(mapstructMapper.teacherToTeacherDto(result));
+            return ResponseEntity.status(HttpStatus.CREATED).body(mapstructMapper.teacherToTeacherDto(result));
         }
         catch (RuntimeException e) {
             log.error("Error during creation Teacher", e.getMessage());
