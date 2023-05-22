@@ -45,10 +45,20 @@
 				{
 					"name": "GET TEACHER",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJfaWQiOjEsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6IkphdmEtc3ByaW5nLWJvb3QiLCJleHAiOjE2ODQ4NzA1MTR9.0mHdPY36lPpt4tnimqZExrk7GndJLN4zpU-3B2fCqT0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/etudiant/",
+							"raw": "http://localhost:8080/api/teacher",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -56,8 +66,7 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"etudiant",
-								""
+								"teacher"
 							]
 						}
 					},
@@ -66,11 +75,21 @@
 				{
 					"name": "ADD TEACHER",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJfaWQiOjEsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6IkphdmEtc3ByaW5nLWJvb3QiLCJleHAiOjE2ODQ4NzA1MTR9.0mHdPY36lPpt4tnimqZExrk7GndJLN4zpU-3B2fCqT0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nom\":\"Diop\",\r\n    \"prenom\":\"Ouz\",\r\n    \"classe\":{\r\n        \"id\":4\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"lastName\":\"Dap\",\r\n    \"firstName\":\"Klon\"\r\n    \r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -95,11 +114,21 @@
 				{
 					"name": "UPDATE TEACHER",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJfaWQiOjEsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Ii9sb2dpbiIsImV4cCI6MTY4NTU3MzI3MH0.COljG_CrNLMdyB-Q8dBAaZiVdYbBtjdDXcONOYZmeMo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nom\":\"Fall\",\r\n    \"prenom\":\"Fallou\",\r\n    \"classe\":{\r\n        \"id\":3\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"lastName\":\"Sane\",\r\n    \"firstName\":\"Bernard\"\r\n    \r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -125,8 +154,21 @@
 				{
 					"name": "DELETE STUDENT",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/teacher/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"teacher",
+								"1"
+							]
+						}
 					},
 					"response": []
 				}
@@ -138,19 +180,69 @@
 				{
 					"name": "GET CLASSE",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJfaWQiOjEsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Ii9sb2dpbiIsImV4cCI6MTY4NTU2ODY1MX0.BR2B0tcEn235mpoD2hnlxCFavoqepX-NlPNL_dz2sqI",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/classe?page=0&perPage=3&orderBy&direction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"classe"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "perPage",
+									"value": "3"
+								},
+								{
+									"key": "orderBy",
+									"value": null
+								},
+								{
+									"key": "direction",
+									"value": null
+								}
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "ADD CLASSE",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJfaWQiOjEsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Ii9sb2dpbiIsImV4cCI6MTY4NTU2ODY1MX0.BR2B0tcEn235mpoD2hnlxCFavoqepX-NlPNL_dz2sqI",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nom\":\"CE3\"\r\n}",
+							"raw": "{\r\n    \"name\":\"CE1\",\r\n    \"teacher\":{\r\n        \"id\":2\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -176,11 +268,21 @@
 				{
 					"name": "UPDATE CLASSE",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJfaWQiOjEsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Ii9sb2dpbiIsImV4cCI6MTY4NTU3MzI3MH0.COljG_CrNLMdyB-Q8dBAaZiVdYbBtjdDXcONOYZmeMo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nom\":\"PE2\"\r\n}",
+							"raw": "{\r\n    \"name\":\"PE2\",\r\n     \"teacher\":{\r\n        \"id\":1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -231,11 +333,33 @@
 			"item": [
 				{
 					"name": "GET STUDENT",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJfaWQiOjEsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Ii9sb2dpbiIsImV4cCI6MTY4NTU3MzI3MH0.COljG_CrNLMdyB-Q8dBAaZiVdYbBtjdDXcONOYZmeMo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:8080/api/etudiant/",
+							"raw": "http://localhost:8080/api/student/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -243,7 +367,7 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"etudiant",
+								"student",
 								""
 							]
 						}
@@ -253,19 +377,60 @@
 				{
 					"name": "ADD STUDENT",
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJfaWQiOjEsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Ii9sb2dpbiIsImV4cCI6MTY4NTU3MzI3MH0.COljG_CrNLMdyB-Q8dBAaZiVdYbBtjdDXcONOYZmeMo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastName\":\"kamara\",\r\n    \"firstName\":\"Peroto\",\r\n    \"classe\":{\r\n        \"id\":1\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"student"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "UPDATE STUDENT",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJfaWQiOjEsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Ii9sb2dpbiIsImV4cCI6MTY4NTU3MzI3MH0.COljG_CrNLMdyB-Q8dBAaZiVdYbBtjdDXcONOYZmeMo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nom\":\"Diallo\",\r\n    \"prenom\":\"Loord\",\r\n    \"classe\":{\r\n        \"id\":4\r\n    }\r\n}",
+							"raw": "{\r\n    \"firstName\":\"Pastore\",\r\n    \"lastName\":\"Eden\",\r\n    \"classe\":{\r\n        \"id\":1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -291,10 +456,20 @@
 				{
 					"name": "DELETE STUDENT",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJfaWQiOjEsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6Ii9sb2dpbiIsImV4cCI6MTY4NTU3MzI3MH0.COljG_CrNLMdyB-Q8dBAaZiVdYbBtjdDXcONOYZmeMo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/student/3",
+							"raw": "http://localhost:8080/api/student/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -303,7 +478,7 @@
 							"path": [
 								"api",
 								"student",
-								"3"
+								"1"
 							]
 						}
 					},
@@ -317,11 +492,21 @@
 				{
 					"name": "SearchStudent",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJfaWQiOjEsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6IkphdmEtc3ByaW5nLWJvb3QiLCJleHAiOjE2ODQ4NzA1MTR9.0mHdPY36lPpt4tnimqZExrk7GndJLN4zpU-3B2fCqT0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"classeName\":\"CE1\",\r\n    \"teacherFirstName\":\"\",\r\n    \"tearcheLastName\":\"\",\r\n    \"page\":0,\r\n    \"perPage\":8,\r\n    \"orderBy\":\"\",\r\n    \"direction\":\"\"\r\n}",
+							"raw": "{\r\n    \"classeName\":\"\",\r\n    \"teacherFirstName\":\"\",\r\n    \"teacherLastName\":\"\",\r\n    \"page\":0,\r\n    \"perPage\":8,\r\n    \"orderBy\":\"\",\r\n    \"direction\":\"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
